@@ -1,5 +1,5 @@
 /*
-Title: CloudBerry Applications 
+Title: Application | CloudBerry Explorer
 */
 
 When CloudBerry Explorer has launched you will notice that the left side
