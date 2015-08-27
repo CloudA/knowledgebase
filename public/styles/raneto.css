@@ -1,6 +1,19 @@
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #D7E0E4;
+}
 .header {
-    background: #2C323D;
+    background-image: url(/img/cloudabg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #ccc;
+    padding: 35px 0;
+    border-bottom: 5px solid #222;
+}
+.header img {
+    height: 25px;
+    margin-left: 20px;
+    margin-top: -15px;
 }
 .header .container-fluid {
     padding-top: 20px;
@@ -11,10 +24,17 @@
     color: #fff;
     text-decoration: none;
 }
+.header .logo-container {
+    text-align: center;
+    margin-bottom: 45px;
+}
 .header .logo {
-    font-size: 20px;
-    line-height: 34px;
-    margin-left: 20px;
+    color: #DDD;
+    font-size: 32px;
+    line-height: 42px;
+    margin-left: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 .header .search-form {
     margin-right: 20px;
@@ -31,15 +51,28 @@
     list-style: none;
 }
 .menu li { line-height: 30px; }
+.menu li ul li {    
+    line-height: 30px;
+    background-color: #FFF;
+    border-bottom: 1px solid #ECECEC;
+    color: #32373B;
+}
+
 .menu .category-title {
-    margin: 25px 0 10px 0;
-    font-size: 12px;
     text-transform: uppercase;
+    margin: 25px 0 0 0;
+    font-size: 110%;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    background-color: #2A92E5;
+    color: #FFF;
+    padding: 15px;
 }
 .menu a {
     display: inline-block;
     color: #888;
     line-height: 20px;
+    padding: 10px 15px;
 }
 .menu a:hover {
     color: #444;
@@ -50,24 +83,50 @@
     color: #444;
 }
 
-.page-home .header .search-form { display: none; }
 .home-search { text-align: center; }
+.home-search input {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 0;
+    width: 80%!important;
+    float: left;
+}
+.home-search button {
+    background-color: #2A92E5;
+    border: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 14px 16px;
+    width: 20%;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-.home-categories { margin: 0 10px; }
+.home-categories { margin: 40px 10px 0 10px; }
 .home-categories .panel-heading {
-    font-size: 100%;
+    font-size: 120%;
     font-weight: normal;
     margin: 0;
+    padding: 20px;
+    background-color: #2A92E5;
+    color: #FFF;
+    border: 0;
 }
 .home-categories .panel-heading,
 .home-categories .panel .page {
     text-overflow: ellipsis;
 	white-space: nowrap;
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .content {
     color: #555;
+    background: #FFF;
     margin: 40px 20px;
     padding: 40px;
     border: 1px solid #e9e9e9;

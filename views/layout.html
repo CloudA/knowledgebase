@@ -10,6 +10,7 @@
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/bower_components/highlightjs/styles/solarized_light.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600,400italic" type="text/css">
 	<link rel="stylesheet" href="/styles/raneto.css">
 
 	{{{config.analytics}}}
@@ -19,21 +20,26 @@
 	<header class="header">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-6">
-
-					<a href="/" class="logo">{{config.site_title}}</a>
-
+				<div class="col-sm-12">
+				    <div class="logo-container">
+                        <img src="/img/ca-words.png" />
+                        <a href="/" class="logo">/ DOCS</a>
+                    </div>
 				</div>
-				<div class="col-sm-6">
-
-					<form class="search-form form-inline pull-right" role="form" action="/">
-						<div class="form-group">
-							<label class="sr-only" for="search">Search</label>
-							<input type="search" class="form-control" name="search" id="search" size="30" value="{{search}}" placeholder="Search">
-						</div>
-					</form>
-
-				</div>
+			</div>
+            <div class="row">
+				<div class="col-sm-12">
+                <div class="home-search">
+                <form class="search-form form-inline" role="form" action="/">
+                    <div class="form-group">
+                        <label class="sr-only" for="home-search">Search the knowledge base</label>
+                        <input type="search" class="form-control input-lg" name="search" id="home-search" size="50" placeholder="Search the knowledge base">
+                        <button type="submit" class="btn btn-primary btn-lg">Search</button>
+                    </div>
+                </form>
+            </div>
+            
+                </div>
 			</div>
 		</div>
 	</header>
