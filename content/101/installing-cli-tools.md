@@ -1,5 +1,6 @@
 /*
 Title: Installing CLI Tools
+Sort: 2
 */
 
 The recommended way to install the OpenStack CLI clients is via Python PIP. If

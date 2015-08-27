@@ -1,5 +1,6 @@
 /*
 Title: Authenticate via CLI Tools
+Sort: 3
 */
 
 In order to use the CLI tools, you must first authenticate to Cloud-A. This is

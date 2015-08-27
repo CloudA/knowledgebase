@@ -1,5 +1,6 @@
 /*
 Title: Navigating the Client Portal
+Sort: 2
 */
 
 When you have successfully entered all of your contact information and your 

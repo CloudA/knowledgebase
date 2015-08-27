@@ -1,5 +1,6 @@
 /*
 Title: Creating Your Account
+Sort: 1
 */
 
 Our goal at Cloud-A is to make the process of procuring cloud infrastructure as

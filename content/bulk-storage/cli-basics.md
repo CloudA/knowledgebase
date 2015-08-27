@@ -1,5 +1,6 @@
 /*
 Title: Swift CLI Basics
+Sort: 1
 */
 
 The Bulk Storage CLI tools are a veritable force. After installing the

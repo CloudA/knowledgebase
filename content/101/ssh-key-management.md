@@ -1,5 +1,6 @@
 /*
 Title: SSH Key Management
+Sort: 9
 */
 
 If you don't already use SSH, you'll need to generate a public and private key

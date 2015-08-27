@@ -1,5 +1,6 @@
 /*
 Title: Application | CloudBerry Explorer
+Sort: 6
 */
 
 When CloudBerry Explorer has launched you will notice that the left side

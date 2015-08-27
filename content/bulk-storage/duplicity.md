@@ -1,5 +1,6 @@
 /*
 Title: Backups | Duplicity
+Sort: 9
 */
 
 Bulk Storage is a perfect destination for backups and archived data, and there
