@@ -160,7 +160,7 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.content code {
+/* .content code {
     background-color: #FFFDDC;
     color: #555;
 }
@@ -169,7 +169,7 @@ body {
     border: 0;
 }
 .content pre code { color: #657B83; }
-.content .hljs { background: none; }
+.content .hljs { background: none; } */
 .content .page-meta {
     font-size: 85%;
     color: #999;
