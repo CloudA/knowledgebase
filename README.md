@@ -12,6 +12,10 @@ If you find any issues with our articles, feel free to create an
 [pull request](https://github.com/CloudA/knowledgebase/pulls) with any 
 changes, and someone from our team will review!
 
+Cloud-A Customers who contribute documentation or changes will be added to 
+the Credits section, and awarded with a credit on their account for each 
+accepted pull request.
+
 Install Locally
 ---------------
 
