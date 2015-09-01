@@ -9,13 +9,13 @@ Here is a list of common commands for reference, grouped by service.
 
 Get a fresh token
 
-```
+```bash
 $ keystone token-get 
 ```
 
 List Identity service catalog
 
-```
+```bash
 $ keystone catalog
 ```
 
@@ -23,25 +23,25 @@ $ keystone catalog
 
 List images you can access (both public, and uploaded)
 
-```
+```bash
 $ glance image-list
 ```
 
 Delete specified image
 
-```
+```bash
 $ glance image-delete IMAGE
 ```
 
 Show the details of a specific image
 
-```
+```bash
 $ glance image-show IMAGE
 ```
 
 Update image
 
-```
+```bash
 $ glance image-update IMAGE
 ```
 
@@ -49,7 +49,7 @@ $ glance image-update IMAGE
 
 List and check status of instances
 
-```
+```bash
 $ nova list
 
 +--------+---------+---------+------------+-------------+----------------------------------+
@@ -62,7 +62,7 @@ $ nova list
 
 List all available images.
 
-```
+```bash
 $ nova image-list
 
 +--------+---------------------+--------+--------------------------------------+
@@ -76,7 +76,7 @@ $ nova image-list
 List flavors, A.K.A VM Sizes to choose from when launching a new server via 
 `nova boot`.
 
-```
+```bash
 $ nova flavor-list
 
 +--------+------------+-----------+------+-----------+------+-------+-------------+-----------+
@@ -90,14 +90,14 @@ $ nova flavor-list
 
 Boot an instance using flavor and image ID
 
-```
+```bash
 $ nova boot --image IMAGE --flavor FLAVOR INSTANCE_NAME
 ```
 
 Show details of instance, including VM state, security groups, NICs, last 
 updated date.
 
-```
+```bash
 $ nova show INSTANCE_ID
 
 +-----------------------------+----------------------------+
@@ -121,7 +121,7 @@ $ nova show INSTANCE_ID
 
 View console log of instance. 
 
-```
+```bash
 $ nova console-log INSTANCE_ID 
 
 ------------
@@ -138,7 +138,7 @@ TestSvr Login:
 Create an instance snapshot. Adding the `--poll` argument will ping back to 
 the API server to check on the status until the snapshot has completed.
 
-```
+```bash
 $ nova image-create [--poll] INSTANCE_ID SNAPSHOT_NAME 
 ```
 
@@ -148,7 +148,7 @@ $ nova image-create [--poll] INSTANCE_ID SNAPSHOT_NAME
 Pause / Unpause. This leaves the VM fully on and in memory, with execution 
 halted.
 
-```
+```bash
 $ nova pause INSTANCE_ID 
 $ nova unpause INSTANCE_ID 
 ```
@@ -157,7 +157,7 @@ Suspend / Resume. The equivalent of hibernate functionality, all memory is
 written to disk and the system is halted. On resume, the system is started 
 and system state is loaded from the save point.
 
-```
+```bash
 $ nova suspend NAME
 $ nova resume NAME
 ```
@@ -166,7 +166,7 @@ Shutdown / Boot / Reboot. A hard reboot is a force stop, standard reboot
 issues a soft shutdown command to the server via ACPI to allow it to stop 
 running processes. 
 
-```
+```bash
 $ nova stop NAME
 $ nova start NAME
 $ nova reboot NAME
@@ -178,7 +178,7 @@ $ nova reboot --hard NAME
 Add rules to default security group allowing ping and SSH between
 instances in the default security group
 
-```
+```bash
 $ nova secgroup-add-group-rule default default icmp -1 -1
 $ nova secgroup-add-group-rule default default tcp 22 22
 ```
@@ -190,14 +190,14 @@ stack.
 
 Create network & subnet
 
-```
+```bash
 $ neutron net-create NAME
 $ neutron subnet-create NETWORK_ID CIDR
 ```
 
 View all public IPs in your pool, and which servers they're assigned to.
 
-```
+```bash
 $ neutron floatingip-list
 
 +--------+------------------+---------------------+---------+
@@ -213,13 +213,13 @@ attach to instances.
 
 Create a new volume
 
-```
+```bash
 $ cinder create SIZE_IN_GB --display-name NAME
 ```
 
 List volumes, notice status of volume
 
-```
+```bash
 $ cinder list
 
 +--------+-----------------+----------------+------+-------------+----------+--------+
@@ -233,23 +233,24 @@ $ cinder list
 Attach volume to instance after instance is active, and volume is
 available.
 
-```
+```bash
 $ nova volume-attach INSTANCE_ID VOLUME_ID(/dev/vdb) auto
 ```
 
 Manage volumes & filesystems after login into the instance
 
-```
-# fdisk -l
-# mkfs.ext4 /dev/vdb
+```bash
+$ nova volume-attach INSTANCE_ID VOLUME_ID(/dev/vdb) auto
+$$ fdisk -l
+$$ mkfs.ext4 /dev/vdb
 ```
 
 Test it out by mounting and writing to the volume.
 
-```
-# mkdir /backups
-# mount /dev/vdb /backups
-# touch /backups/test.txt
-# ls /backups
+```bash
+$$ mkdir /backups
+$$ mount /dev/vdb /backups
+$$ touch /backups/test.txt
+$$ ls /backups
 test.txt
 ```
