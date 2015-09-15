@@ -20,12 +20,12 @@ per-container basis, so your private container data remains as such. CDN
 enabled containers must be public-readable through the ACL.
 
 All Bulk Storage CDN traffic is serviced via the shortened blkstr.ca domain, 
-and urls are condensed to the following format on default 80/443 ports for 
-http and https:
+and urls are condensed to the following format:
 
 ```
-http(s)://blkstr.ca/{tenant_id}/container/obj.ext
+https://blkstr.ca/{tenant_id}/container/obj.ext
 ```
+Note that http traffic will be automatically redirected to https.
 
 After enabling CDN on a container and requesting an object, you can inspect 
 the cache status of the object through the headers it has returned to you.
