@@ -38,7 +38,7 @@ credentials as follows:
    - Display name: Container name
    - User name: Read-key or Full-access (depending on your choice)
    - Api key: Read-Only key or Full-Access key
-   - Authentication Service: `https://ca-ns-1.bulkstorage.ca:8444/keys\_auth/<container_name>/v2.0`
+   - Authentication Service: `https://ca-ns-1.bulkstorage.ca:8444/keys_auth/<container_name>/v2.0`
    - Tenant Name: Tenant ID
 
 ![CloudBerry Keys Login](/img/content/bulk-storage/cloudberrykeyslogin.png)
