@@ -2,6 +2,29 @@ body {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #D7E0E4;
 }
+.global-header { background: #444; }
+.global-header img { float: left; margin: 6px; height: 18px; }
+.global-header .nav-tabs { border-bottom-color: #666; }
+.global-header .nav-tabs>li>a {
+    border-radius: 0;
+    color: #EEE;
+    font-size: 12px;
+    padding: 6px 15px;
+}
+.global-header .nav>li>a:hover, 
+.global-header .nav>li>a:focus {
+    background: #FFF;
+    color: #444;
+}
+.global-header .nav-tabs>li.active>a, 
+.global-header .nav-tabs>li.active>a:hover, 
+.global-header .nav-tabs>li.active>a:focus {
+    color: #ccc;
+    background-color: #222;
+    border-color: #666;
+    border-top-color: transparent;
+}
+
 .header {
     background-image: url(/img/cloudabg.jpg);
     background-repeat: no-repeat;
