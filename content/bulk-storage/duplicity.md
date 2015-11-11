@@ -20,20 +20,37 @@ backup files to Cloud-A's Bulk Storage service on an Ubuntu 12.04 server.
 ```
 pip install python-swiftclient
 pip install python-keystoneclient
+pip install lockfile
+```
+
+You'll need to also install the rsync dev library.
+
+Ubuntu or Debian:
+```
 apt-get install librsync-dev
+```
+
+CentOS, Fedora < 22, or RHEL:
+```
+yum install librsync-devel
+```
+
+Fedora >= 22:
+```
+dnf install librsync-devel
 ```
 
 ### Download and Install Duplicity
 
 The latest version of Duplicity is required, as swift support was recently
 added to the project, so we'll grab the latest release at the time of writing
-(0.6.24) from launchpad, and install.
+(0.6.26) from launchpad, and install.
 
 ```
-$ wget http://code.launchpad.net/duplicity/0.6-series/0.6.24/+download
-$ tar -zxvf duplicity-0.6.24.tar.gz
-$ cd duplicity-0.6.24/
-$ python setup.py install
+wget https://launchpad.net/duplicity/0.6-series/0.6.26/+download/duplicity-0.6.26.tar.gz
+tar -zxvf duplicity-0.6.26.tar.gz
+cd duplicity-0.6.26/
+python setup.py install
 ```
 
 ### Configure Authentication
@@ -46,33 +63,31 @@ more easily.
 #### Keystone Authentication
 
 ```
-$ export SWIFT_USERNAME=<EMAIL>
-$ export SWIFT_TENANT_NAME=<EMAIL>
-$ export SWIFT_PASSWORD=<PASSWORD>
-$ export SWIFT_AUTHURL=http://api.cell01.clouda.ca:5000/v2.0
-$ export SWIFT_AUTHVERSION=2
+export SWIFT_USERNAME=<TENANT_NAME>:<USER_NAMEL>
+export SWIFT_PASSWORD=<PASSWORD>
+export SWIFT_AUTHURL=https://keystone.ca-ns-1.clouda.ca:8443/v2.0
+export SWIFT_AUTHVERSION=2
 ```
 
 #### Container Keys Authentication
 
 ```
-$ export SWIFT_USERNAME=Full-Key
-$ export SWIFT_TENANT_NAME=<Tenant ID>
-$ export SWIFT_PASSWORD=<Container Key>
-$ export SWIFT_AUTHURL=https://ca-ns-1.bulkstorage.ca:8444/keys_auth/<container_name>
-$ export SWIFT_AUTHVERSION=2
+export SWIFT_USERNAME=<TENANT_NAME>:Full-Key
+export SWIFT_PASSWORD=<Container Key>
+export SWIFT_AUTHURL=https://ca-ns-1.bulkstorage.ca:8444/keys_auth/<container_name>
+export SWIFT_AUTHVERSION=2
 ```
 
 ### Execute your first backup!
 
 The first backup with Duplicity will be a full backup, and subsequent backups
 will be incremental and take much less time to complete. Although our example
-uses the "--no-encryption" option, we highly suggest configuring the backup
+uses the "--no-encryption" option, we **highly** suggest configuring the backup
 encryption for your data. For the sake of expediency, we'll throw caution to
 the wind.
 
 ```
-$ duplicity --no-encryption /dir/to/backup swift://my_backups
+duplicity --no-encryption /dir/to/backup swift://my_backups
 ```
 
 If you're interested in how it stores full and incremental backups, you can
@@ -85,7 +100,7 @@ Restoring backups are just as easy as creating them. Here's an example of a
 full restore!
 
 ```
-$ duplicity --no-encryption swift://my_backups /dir/to/restore
+duplicity --no-encryption swift://my_backups /dir/to/restore
 ```
 
 For more information on using Duplicity, check their official docs page:
