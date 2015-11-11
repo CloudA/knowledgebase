@@ -187,7 +187,7 @@ $ neutron net-list
 
 ```
 
-In this example, we'll use the *4 GB* flavour and boot our instance on the *Demo Network*. 
+In this example, we'll use the *4 GB* flavour, boot our instance on the *Demo Network*, and name our instance `boot-from-vol`.
 
 ```
 nova boot --flavor b5ae8e6f-03f3-4146-9add-6e84e6944ead --block-device-mapping vda=3646ab44-e6b2-41d6-85ae-cc3dfbfb8f9a:::0 \
