@@ -1,5 +1,6 @@
 /*
 Title: Using Instance Snapshots
+Sort: 1
 */
 
 Snapshots are a handy way to create point in time stills of your instance's 

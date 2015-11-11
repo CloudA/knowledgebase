@@ -1,5 +1,6 @@
 /*
 Title: Booting an Instance from a Volume
+Sort: 4
 */
 
 While in most use cases booting from an image or snapshot directly is sufficient,
