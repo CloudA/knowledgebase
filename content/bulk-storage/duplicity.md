@@ -17,7 +17,7 @@ backup files to Cloud-A's Bulk Storage service on an Ubuntu 12.04 server.
 
 ### Installing Dependencies
 
-```
+```asciidoc
 pip install python-swiftclient
 pip install python-keystoneclient
 pip install lockfile
@@ -26,17 +26,17 @@ pip install lockfile
 You'll need to also install the rsync dev library.
 
 Ubuntu or Debian:
-```
+```asciidoc
 apt-get install librsync-dev
 ```
 
 CentOS, Fedora < 22, or RHEL:
-```
+```asciidoc
 yum install librsync-devel
 ```
 
 Fedora >= 22:
-```
+```asciidoc
 dnf install librsync-devel
 ```
 
@@ -46,7 +46,7 @@ The latest version of Duplicity is required, as swift support was recently
 added to the project, so we'll grab the latest release at the time of writing
 (0.6.26) from launchpad, and install.
 
-```
+```asciidoc
 wget https://launchpad.net/duplicity/0.6-series/0.6.26/+download/duplicity-0.6.26.tar.gz
 tar -zxvf duplicity-0.6.26.tar.gz
 cd duplicity-0.6.26/
@@ -62,7 +62,7 @@ more easily.
 
 #### Keystone Authentication
 
-```
+```asciidoc
 export SWIFT_USERNAME=<TENANT_NAME>:<USER_NAMEL>
 export SWIFT_PASSWORD=<PASSWORD>
 export SWIFT_AUTHURL=https://keystone.ca-ns-1.clouda.ca:8443/v2.0
@@ -71,7 +71,7 @@ export SWIFT_AUTHVERSION=2
 
 #### Container Keys Authentication
 
-```
+```asciidoc
 export SWIFT_USERNAME=<TENANT_NAME>:Full-Key
 export SWIFT_PASSWORD=<Container Key>
 export SWIFT_AUTHURL=https://ca-ns-1.bulkstorage.ca:8444/keys_auth/<container_name>
@@ -86,7 +86,7 @@ uses the "--no-encryption" option, we **highly** suggest configuring the backup
 encryption for your data. For the sake of expediency, we'll throw caution to
 the wind.
 
-```
+```asciidoc
 duplicity --no-encryption /dir/to/backup swift://my_backups
 ```
 
@@ -99,7 +99,7 @@ data in action!
 Restoring backups are just as easy as creating them. Here's an example of a
 full restore!
 
-```
+```asciidoc
 duplicity --no-encryption swift://my_backups /dir/to/restore
 ```
 

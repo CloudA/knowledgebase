@@ -22,7 +22,7 @@ enabled containers must be public-readable through the ACL.
 All Bulk Storage CDN traffic is serviced via the shortened blkstr.ca domain, 
 and urls are condensed to the following format:
 
-```
+```asciidoc
 https://blkstr.ca/{tenant_id}/container/obj.ext
 ```
 Note that http traffic will be automatically redirected to https.
@@ -30,7 +30,7 @@ Note that http traffic will be automatically redirected to https.
 After enabling CDN on a container and requesting an object, you can inspect 
 the cache status of the object through the headers it has returned to you.
 
-```
+```asciidoc
 X-CDN-Status: alive | dead
 X-CDN-Cache: HIT | MISS | BYPASS
 ```
@@ -48,7 +48,7 @@ manual refresh on individual objects by passing a `X-CDN-Cache-Refresh`
 header with your GET request.
 
 curl example
-```bash
+```asciidoc
 curl -i -H "X-CDN-Cache-Refresh: yes" https://blkstr.ca/{tenant_id}/container/object.ext
 ```
 

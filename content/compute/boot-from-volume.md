@@ -11,8 +11,8 @@ from a volume has the following advantages:
 * Volumes can persist beyond an instance's life (portability)
 * You can build an image on a volume while it is attached to another instance
 
-Before getting started, please make sure that you have the [CLI Toolset](/101/installing-cli-tools)
-installed.
+Before getting started, please make sure that you have the 
+[CLI Toolset](/101/installing-cli-tools) installed.
 
 ## Creating your volume
 
@@ -22,7 +22,7 @@ There are two ways to create your volume to prepare it as a root disk.
 
 Get a list of images that are available to retreive the image ID:
 
-```
+```asciidoc
 $ nova image-list
 
 +--------------------------------------+------------------------------------+--------+--------+
@@ -50,7 +50,7 @@ $ nova image-list
 
 In our example, we'll create a volume based on an Ubuntu 14.04 image with a 15GB size.
 
-```
+```asciidoc
 $ cinder create --image-id 249d6dc3-235e-4021-86a1-a3636ac3f134 --display-name Ubuntu-14.04 15
 
 +---------------------+--------------------------------------+
@@ -84,7 +84,7 @@ the basic steps around attaching a volume to an instance here.
 
 First step is to create our volume. We'll be creating a volume named `my-custom-vol` with a size of 30GB.
 
-```
+```asciidoc
 $ cinder create --display-name my-custom-vol 30
 
 +---------------------+--------------------------------------+
@@ -109,8 +109,9 @@ $ cinder create --display-name my-custom-vol 30
 
 Next, we'll need to attach the volume to an existing instance. 
 
-```
+```asciidoc
 $ nova list
+
 +--------------------------------------+-------------------+--------+------------+-------------+---------------------------+
 | ID                                   | Name              | Status | Task State | Power State | Networks                  |
 +--------------------------------------+-------------------+--------+------------+-------------+---------------------------+
@@ -131,7 +132,7 @@ From there, you will need to perform the following generic steps:
 
 Once those steps have been completed, we'll go ahead and detach the volume from our instance.
 
-```
+```asciidoc
 $ nova volume-detach 95bc8519-a757-4736-a623-0974132240c4 3646ab44-e6b2-41d6-85ae-cc3dfbfb8f9a 
 ```
 
@@ -157,7 +158,7 @@ is alive.
 Before booting, we'll need to collect IDs for the flavour and network we'll want to use. Remember that the flavour's
 disk size allocation is no longer relevant since we'll be using a volume as our root disk.
 
-```
+```asciidoc
 $ nova flavor-list
 
 +--------------------------------------+------------+-----------+------+-----------+------+-------+-------------+-----------+
@@ -190,8 +191,8 @@ $ neutron net-list
 
 In this example, we'll use the *4 GB* flavour, boot our instance on the *Demo Network*, and name our instance `boot-from-vol`.
 
-```
-nova boot --flavor b5ae8e6f-03f3-4146-9add-6e84e6944ead --block-device-mapping vda=3646ab44-e6b2-41d6-85ae-cc3dfbfb8f9a:::0 \
+```asciidoc
+$ nova boot --flavor b5ae8e6f-03f3-4146-9add-6e84e6944ead --block-device-mapping vda=3646ab44-e6b2-41d6-85ae-cc3dfbfb8f9a:::0 \
 --nic net-id=7bc79d7b-0d04-488b-9513-b4695988840e boot-from-vol
 ```
 

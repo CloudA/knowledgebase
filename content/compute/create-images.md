@@ -48,7 +48,7 @@ Once everything is ready, you can convert the disks to the correct format
 [OpenStack Image Guide](http://docs.openstack.org/image-guide/content/ch_converting.html) 
 on using the tool, simply, it can be accomplished with the following command:
 
-```
+```asciidoc
 qemu-img convert -f <server_disk_format> -O qcow2 server.vdi -o compat=0.10 server.qcow2
 ```
 
@@ -60,7 +60,7 @@ bootstrapped.
 
 An example glance upload command would look like this:
 
-```
+```asciidoc
 glance image-create --name "My Base Image" --disk-format qcow2 --container-format bare --file server.qcow2
 ```
 
