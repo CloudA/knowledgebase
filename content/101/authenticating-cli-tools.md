@@ -34,9 +34,9 @@ System and Security section, and clicking on System. From that window, you will
 see an Advanced tab, wherein you can set your environment variables. Below is a
 list of variables and what their corresponding values should be:
 
- - `OS_USERNAME` - The user that you use to login to Cloud A (typically your 
+ - `OS_USERNAME` - The user that you use to login to Cloud A (typically your
  email address)
  - `OS_PASSWORD` - Your Cloud A password
  - `OS_TENANT_NAME` - Typically the same as OS_USERNAME
- - `OS_AUTH_URL` - Set to http://api.cell01.clouda.ca:5000/v2.0/ Cloud A 
+ - `OS_AUTH_URL` - Set to http://api.cell01.clouda.ca:5000/v2.0/ Cloud A
  Windows Environment
