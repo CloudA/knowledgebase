@@ -82,12 +82,12 @@ export SWIFT_AUTHVERSION=2
 
 The first backup with Duplicity will be a full backup, and subsequent backups
 will be incremental and take much less time to complete. Although our example
-uses the "--no-encryption" option, we highly suggest configuring the backup
+uses the "--no-encryption" option, we **highly** suggest configuring the backup
 encryption for your data. For the sake of expediency, we'll throw caution to
 the wind.
 
 ```
-$ duplicity --no-encryption /dir/to/backup swift://my_backups
+duplicity --no-encryption /dir/to/backup swift://my_backups
 ```
 
 If you're interested in how it stores full and incremental backups, you can
@@ -100,7 +100,7 @@ Restoring backups are just as easy as creating them. Here's an example of a
 full restore!
 
 ```
-$ duplicity --no-encryption swift://my_backups /dir/to/restore
+duplicity --no-encryption swift://my_backups /dir/to/restore
 ```
 
 For more information on using Duplicity, check their official docs page:
