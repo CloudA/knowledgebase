@@ -22,7 +22,10 @@ connecting client terminates.
 ## Best Practises
 
 The best practise for creating your security groups is to make them as 
-**specific** to a use case as possible. 
+**specific** to a use case as possible in order to retain flexibility. The
+screenshot below shows an example of use-case groups being assigned to a server.
+
+![Security Group Assignment](/img/content/networking/security-group-multi-assign.png)
 
 For example, one might create individual Security groups for SSH access, Web 
 Server ports, DB server ports, and VPN access. A single instance (even 
@@ -31,6 +34,7 @@ For an application server, you could assign the server to all of the above
 groups, opening them to the world. You may later consider that you do not 
 want SSH access open, and you could simply remove the server from the SSH 
 group rather than modifying a large group for all servers that belong to it. 
+
 
 This practise will help you scale and manage your virtual network security
 beyond just a few servers, while knowing exactly which servers can access which

@@ -3,6 +3,10 @@ Title: Security Group Examples
 Sort: 2
 */
 
+This article contains a collection of common Security Group configurations and
+questions about more complex configurations of Security Groups and Security
+Group Rules.
+
 ## Web Server Security Group
 
 Navigate to "Access & Security", under the "Servers" menu, then click "create
