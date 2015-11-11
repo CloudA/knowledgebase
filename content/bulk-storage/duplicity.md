@@ -20,6 +20,7 @@ backup files to Cloud-A's Bulk Storage service on an Ubuntu 12.04 server.
 ```
 pip install python-swiftclient
 pip install python-keystoneclient
+pip install lockfile
 apt-get install librsync-dev
 ```
 
@@ -27,13 +28,13 @@ apt-get install librsync-dev
 
 The latest version of Duplicity is required, as swift support was recently
 added to the project, so we'll grab the latest release at the time of writing
-(0.6.24) from launchpad, and install.
+(0.6.26) from launchpad, and install.
 
 ```
-$ wget http://code.launchpad.net/duplicity/0.6-series/0.6.24/+download
-$ tar -zxvf duplicity-0.6.24.tar.gz
-$ cd duplicity-0.6.24/
-$ python setup.py install
+wget https://launchpad.net/duplicity/0.6-series/0.6.26/+download/duplicity-0.6.26.tar.gz
+tar -zxvf duplicity-0.6.26.tar.gz
+cd duplicity-0.6.26/
+python setup.py install
 ```
 
 ### Configure Authentication
