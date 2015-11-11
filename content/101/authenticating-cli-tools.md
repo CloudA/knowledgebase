@@ -19,7 +19,7 @@ directory).
 Once you have downloaded your RC file, simply "source" the file prior to using
 the CLI clients in your shell of choice.
 
-```
+```asciidoc
 source <PATH_TO_RC_FILE>
 ```
 

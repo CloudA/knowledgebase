@@ -10,7 +10,7 @@ security.
 
 To generate your own SSH key, run
 
-```
+```asciidoc
 $ ssh-keygen -t rsa
 ```
 
@@ -39,13 +39,13 @@ instance screen by clicking the add button next to the SSH key dropdown.
 If you haven't configured your OpenStack command line tools yet read this
 article before continuing.
 
-```
+```asciidoc
 $ nova keypair-add --pub_key ~/.ssh/id_rsa.pub my_awesome_key
 ```
 
 To confirm that the operation worked, you can run
 
-```
+```asciidoc
 $ nova keypair-list
 ```
 
@@ -66,6 +66,6 @@ following list to find out which user you should be using.
 Then, since your SSH key is injected into the instance when it's created, you
 can simply SSH in without a cumbersome password to a sudo-able user.
 
-```
+```asciidoc
 $ ssh <user>@<floating_ip>
 ```

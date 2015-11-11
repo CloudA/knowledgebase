@@ -14,7 +14,7 @@ we're done.
 
 Let's start by exploring our account.
 
-```
+```asciidoc
 $ swift stat
 Account: AUTH_<tenant_id>
 Containers: 0
@@ -26,14 +26,14 @@ Looks like we don't have anything yet, you can see that there are 0 containers,
 0 objects, taking up 0 bytes. So let's start by uploading a file. Note that 
 this will create a container if one doesn't exist (it doesn't).
 
-```
+```asciidoc
 $ swift upload demo index.html
 index.html
 ```
 
 Now we can see the demo container has 1 object of 370 bytes.
 
-```
+```asciidoc
 $ swift stat demo
 Account: AUTH_<tenant_id>
 Container: demo
@@ -47,14 +47,14 @@ Sync Key:
 
 Next, check to see what's in the bucket.
 
-```
+```asciidoc
 $ swift list demo
 index.html
 ```
 
 We'll download the new file and see if it worked.
 
-```
+```asciidoc
 $ swift download demo index.html
 index.html [auth 0.816s, headers 1.133s, total 1.134s, 0.012 MB/s]
 $ cat index.html
@@ -65,7 +65,7 @@ $ cat index.html
 
 Huzzah! Now let's make the container publicly accessible!
 
-```
+```asciidoc
 $ swift post -r ".r:*" demo
 $ wget https://swift.ca-ns-1.clouda.ca:8443/v1/AUTH_<YOUR_TENANT_ID>/demo/index.html
 ...
@@ -79,7 +79,7 @@ Saving to: 'index.html'
 
 And now, let's clean up after ourselves.
 
-```
+```asciidoc
 $ swift delete demo
 index.html
 $ swift stat demo

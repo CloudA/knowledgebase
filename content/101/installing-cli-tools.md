@@ -11,7 +11,7 @@ First, make sure you have the python `setuptools` and packaging tool `pip`
 available. If you do not have `easy_install` installed, you can follow the
 official install documentation.
 
-```
+```asciidoc
 # Mac OSX
 $ easy_install pip
 # Ubuntu / Debian
@@ -35,7 +35,7 @@ services. We make use of
 
 Installing the toolset is simple:
 
-```
+```asciidoc
 $ pip install python-novaclient python-keystoneclient python-glanceclient python-cinderclient python-neutronclient python-swiftclient
 
 Downloading/unpacking python-novaclient
