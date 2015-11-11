@@ -1,70 +1,47 @@
 /*
 Title: Security Groups
+Sort: 0
 */
 
-By default, a raw instance only has port 22 open so you can SSH in after it's
-created. We don't want to expose your servers to anything a brand new instance
-isn't prepared for. To manage access, we use Security Groups. The best practise 
-for security groups, is to make them as specific as possible. A single instance
-can belong to multiple security groups, so for a web server, you might want
-ports 22, 443, and 80 open. Or for a DB server you might want port 5432 open
-for PostgreSQL.
+Network Security Groups allow you to open traffic on a port-by-port basis.
+This flexible model can extend to create any number of situations, whether
+simple or complex while maintaining strict security.
 
-If access is attempted to a port/IP combination that is not assigned, no
-connection will be established at all and the connection will time out.
+### Restricted by Default
 
-The default security group has just port 22 open, so we'll create a brand new
-one named "Web" for a web server as an example.
+By default, a raw instance only has port 22 open so you can SSH in after
+it's created. We don't want to expose your servers to anything a brand new
+instance isn't prepared for.
 
-## Creating a "Web" Security Group
+### Closed Port Behaviour
 
-Navigate to "Access & Security", under the "Servers" menu, then click "create
-security group". Fill in your desired identifier and description for the new
-security group. Note that your identifier can only contain upper or lower case
-letters (no spaces or symbols).
+If access is attempted to a port/IP combination that is not permitted, no
+connection will be established at all and the connection will time out when the
+connecting client terminates.
 
+### Best Practises
 
-![Create Securit Group](/img/content/networking/web-security-group.png)
+The best practise for creating your Security Groups is to make them as
+**specific** to a use case as possible in order to retain flexibility. The
+screenshot below shows an example of use-case groups being assigned to a server.
 
-Then, edit your security group's rules to add the required ports by clicking
-"Edit Rules".
+![Security Group Assignment](/img/content/networking/security-group-multi-assign.png)
 
-![Web Security Group](/img/content/networking/security-group-list.png)
+For example, one might create individual Security Groups for SSH (port
+22), Web Server ports (80 / 443), DB server ports (3306 / 1433 / 5432), and
+VPN access (port 1194). A single instance (even individual ports on the same
+server) can have multiple Security Groups assigned. For an application
+server, you could assign all of the above groups, thus opening it to the
+world on the defined ports.
 
-Click "Add Rule", and the Add Rule modal window will appear so you can add the
-port to the group.
+You may later consider that exposing all ports, or ports which don't need to
+be exposed, can lead to unauthorized access. After you determine that you do
+not want SSH access open, and you could then remove the SSH Security
+Group from the server rather than modifying a large group for all servers that
+belong to it.
 
-Make sure the protocol is set to TCP, and the set the port to 80.
-
-
-![Security Group Add Rule](/img/content/networking/security-group-add-rule.png)
-
-Now that you have port 80 configured, you'll also want to add 443 for HTTPS
-traffic for your web security group. Simply go through the same process again,
-but this time specify port 443, and hit Add again.
-
-Your security group details should now list both 80 and 443, like below.
-
-![Security Group New Rules](/img/content/networking/security-group-rules.png)
+This practise will help you scale and manage your virtual network security
+beyond just a few servers, while knowing exactly which servers can access which
+resources and allow you to make quick security adjustments on the fly.
 
 
-## Assigning the new group
-
-The final step, now that we have created the "web" security group, is to add
-the group to your instance that you want connected to the web. Head back to
-your instance list, and click the "More" menu on the desired instance, then
-"Edit security groups".
-
-![Security Group Assigning Menu](/img/content/networking/security-group-assign.png)
-
-This will open the "Edit Instance" window set to the "Security Groups" tab.
-This view shows a list of all available Security Groups, along with any that
-are already assigned to the instance. Clicking the + button on the "web"
-security group listed in "All Security Groups" will place it in the right
-column of assigned groups.
-
-![Security Group Assigning](/img/content/networking/security-group-assign2.png)
-
-After clicking save, your instance will be accessible on port 80 and 443. To
-confirm this, you can open your instance details and see the list of open ports
-will now include the assigned web ports!
