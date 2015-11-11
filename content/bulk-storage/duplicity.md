@@ -21,7 +21,23 @@ backup files to Cloud-A's Bulk Storage service on an Ubuntu 12.04 server.
 pip install python-swiftclient
 pip install python-keystoneclient
 pip install lockfile
+```
+
+You'll need to also install the rsync dev library.
+
+Ubuntu or Debian:
+```
 apt-get install librsync-dev
+```
+
+CentOS, Fedora < 22, or RHEL:
+```
+yum install librsync-devel
+```
+
+Fedora >= 22:
+```
+dnf install librsync-devel
 ```
 
 ### Download and Install Duplicity
@@ -47,21 +63,19 @@ more easily.
 #### Keystone Authentication
 
 ```
-$ export SWIFT_USERNAME=<EMAIL>
-$ export SWIFT_TENANT_NAME=<EMAIL>
-$ export SWIFT_PASSWORD=<PASSWORD>
-$ export SWIFT_AUTHURL=http://api.cell01.clouda.ca:5000/v2.0
-$ export SWIFT_AUTHVERSION=2
+export SWIFT_USERNAME=<TENANT_NAME>:<USER_NAMEL>
+export SWIFT_PASSWORD=<PASSWORD>
+export SWIFT_AUTHURL=https://keystone.ca-ns-1.clouda.ca:8443/v2.0
+export SWIFT_AUTHVERSION=2
 ```
 
 #### Container Keys Authentication
 
 ```
-$ export SWIFT_USERNAME=Full-Key
-$ export SWIFT_TENANT_NAME=<Tenant ID>
-$ export SWIFT_PASSWORD=<Container Key>
-$ export SWIFT_AUTHURL=https://ca-ns-1.bulkstorage.ca:8444/keys_auth/<container_name>
-$ export SWIFT_AUTHVERSION=2
+export SWIFT_USERNAME=<TENANT_NAME>:Full-Key
+export SWIFT_PASSWORD=<Container Key>
+export SWIFT_AUTHURL=https://ca-ns-1.bulkstorage.ca:8444/keys_auth/<container_name>
+export SWIFT_AUTHVERSION=2
 ```
 
 ### Execute your first backup!
