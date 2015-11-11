@@ -95,7 +95,7 @@ this shared key mechanism is separate from the Keystone authentication backend.
 
 Note: You can get your full Swift API URL from the API Access section of the Dashboard.
 
-```asciidoc
+```python
 >>> import swiftclient
 >>> read_key ='read-TEST-dff8555a-8c4d-4541-a629-3b6e7029803a'
 >>> response = swiftclient.get_object(
@@ -120,7 +120,7 @@ Uploading a file using the full-key is just as easy, in this example we'll
 upload a text file to Bulk Storage and read it back out again using the 
 python-swiftclient library.
 
-```asciidoc
+```python
 >>> import swiftclient
 >>> full_key = 'full-TEST-1e1c1fca-16ce-4aba-b89c-3c8b7911d1c4'
 >>> swiftclient.put_object(
