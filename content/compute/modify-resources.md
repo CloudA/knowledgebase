@@ -1,5 +1,6 @@
 /*
 Title: Change Instance CPU / RAM
+Sort: 2
 */
 
 The process to increase your instance's RAM or CPU is as follows:

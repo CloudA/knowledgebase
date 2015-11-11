@@ -1,5 +1,6 @@
 /*
 Title: Creating Custom Images
+Sort: 3
 */
 
 Before getting started, it's highly recommended that you read the 
