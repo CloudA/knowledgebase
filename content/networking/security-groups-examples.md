@@ -78,7 +78,7 @@ specify a subsection of IP addresses. In the context of Security Groups, it
 permits you to open access to a group of IP addresses, rather than singularly or
 globally. CIDRs are written as a *standard IP address*, followed by a *slash* (/),
 then a *number* specifying the number of bits of address space you are
-designating from **0 to 32**. Read a full definition of 
+designating from **0 to 32**. Read a full definition of
 [CIDR on Wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
 
 ### Globally Open
@@ -96,7 +96,9 @@ create a CIDR of `10.0.0.0/16`.
 ### Single Address
 
 Finally, if you want to only allow access for the rules of a security group to
-a single IP (office / home), you would create the most restrictive CIDR 
-possible, allowing only 1 address through using a `/32` designation. For 
-example, if your address were `76.11.212.12`, the CIDR would be 
-`76.11.212.12/32`.
+a single IP (office / home), you would create the most restrictive CIDR
+possible, allowing only 1 address through using a `/32` designation. For
+example, if your address were `76.11.212.12`, the CIDR would be
+`76.11.212.12/32`. It is also worth noting that, for simplicity's sake, if
+you want to open access to a single IP address, you may declare only the IP
+without the `/32` designation as it will be appended on the back end for you.
