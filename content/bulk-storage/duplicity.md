@@ -63,7 +63,7 @@ more easily.
 #### Keystone Authentication
 
 ```asciidoc
-export SWIFT_USERNAME=<TENANT_NAME>:<USER_NAMEL>
+export SWIFT_USERNAME=<TENANT_NAME>:<USER_NAME>
 export SWIFT_PASSWORD=<PASSWORD>
 export SWIFT_AUTHURL=https://keystone.ca-ns-1.clouda.ca:8443/v2.0
 export SWIFT_AUTHVERSION=2
