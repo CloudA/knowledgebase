@@ -25,3 +25,5 @@ node_modules
 # Misc
 *.pages
 *.pdf
+lextab.py
+yacctab.py
