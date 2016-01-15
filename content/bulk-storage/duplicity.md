@@ -72,7 +72,7 @@ export SWIFT_AUTHVERSION=2
 #### Container Keys Authentication
 
 ```asciidoc
-export SWIFT_USERNAME=<TENANT_NAME>:Full-Key
+export SWIFT_USERNAME=<TENANT_ID>:Full-Key
 export SWIFT_PASSWORD=<Container Key>
 export SWIFT_AUTHURL=https://ca-ns-1.bulkstorage.ca:8444/keys_auth/<container_name>
 export SWIFT_AUTHVERSION=2
