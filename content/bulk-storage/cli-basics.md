@@ -1,5 +1,5 @@
 /*
-Title: Swift CLI Basics
+Title: Swift CLI | Basics
 Sort: 1
 */
 
