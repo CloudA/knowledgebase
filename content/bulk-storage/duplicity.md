@@ -26,12 +26,12 @@ apt-get install python-dev librsync-dev
 
 CentOS, Fedora < 22, or RHEL:
 ```asciidoc
-yum install python-dev librsync-devel
+yum install python-devel librsync-devel
 ```
 
 Fedora >= 22:
 ```asciidoc
-dnf install python-dev librsync-devel
+dnf install python-devel librsync-devel
 ```
 
 
