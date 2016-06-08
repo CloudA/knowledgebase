@@ -19,7 +19,7 @@ password field empty you'll choose to not set one. Once your key is generated,
 make sure you never share your private key at `~/.ssh/id_rsa`, and whenever
 prompted for your SSH key, you provide the contents of your public key located
 at `~/.ssh/id_rsa.pub`. If you'd like more information on SSH a good overview is
-available here.
+available here: [OpenSSH on WikiBooks](https://en.wikibooks.org/wiki/OpenSSH).
 
 ## Adding Keys From the Dashboard
 
@@ -36,8 +36,8 @@ instance screen by clicking the add button next to the SSH key dropdown.
 
 ## Via the command line
 
-If you haven't configured your OpenStack command line tools yet read this
-article before continuing.
+If you haven't configured your OpenStack command line tools yet read [this
+article](/101/installing-cli-tools) before continuing.
 
 ```asciidoc
 $ nova keypair-add --pub_key ~/.ssh/id_rsa.pub my_awesome_key
