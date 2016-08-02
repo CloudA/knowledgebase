@@ -38,5 +38,4 @@ list of variables and what their corresponding values should be:
  email address)
  - `OS_PASSWORD` - Your Cloud A password
  - `OS_TENANT_NAME` - Typically the same as OS_USERNAME
- - `OS_AUTH_URL` - Set to https://keystone.ca-ns-1.clouda.ca:8443/v2.0 Cloud A
- Windows Environment
+ - `OS_AUTH_URL` - Set to https://keystone.ca-ns-1.clouda.ca:8443/v2.0
