@@ -62,7 +62,7 @@ Storage> 12
 User name to log in.
 user> Full-Key
 API key or password.
-key> MyAPIKey
+key> MYAPIKEY
 Authentication URL for server.
 Choose a number from below, or type in your own value
  1 / Rackspace US
@@ -77,7 +77,7 @@ Choose a number from below, or type in your own value
    \ "https://auth.storage.memset.com/v2.0"
  6 / OVH
    \ "https://auth.cloud.ovh.net/v2.0"
-auth> https://ca-ns-1.bulkstorage.ca:8444/keys_auth/mycontainer
+auth> https://ca-ns-1.bulkstorage.ca:8444/keys_auth/MYCONTAINER
 User domain - optional (v3 auth)
 domain> 
 Tenant name - optional for v1 auth, required otherwise
@@ -94,8 +94,8 @@ Remote config
 --------------------
 [ca]
 user = Full-Key
-key = MyAPIKey
-auth = https://ca-ns-1.bulkstorage.ca:8444/keys_auth/mycontainer
+key = MYAPIKEY
+auth = https://ca-ns-1.bulkstorage.ca:8444/keys_auth/MYCONTAINER
 domain = 
 tenant = TENANTID
 tenant_domain = 
@@ -109,7 +109,7 @@ d) Delete this remote
 y/e/d> y
 ```
 
-Be sure to replace `MyAPIKey`, `mycontainer`, and `TENANTID` with your Full-Key, container name, 
+Be sure to replace `MYAPIKEY`, `MYCONTAINER`, and `TENANTID` with your Full-Key, container name, 
 and tenant ID respectively.
 
 ## Configuring Encryption
@@ -158,7 +158,7 @@ Storage> 5
 Remote to encrypt/decrypt.
 Normally should contain a ':' and a path, eg "myremote:path/to/dir",
 "myremote:bucket" or maybe "myremote:" (not recommended).
-remote> Cloud-A:mycontainer
+remote> Cloud-A:MYCONTAINER
 How to encrypt the filenames.
 Choose a number from below, or type in your own value
  1 / Don't encrypt the file names.  Adds a ".bin" extension only.
@@ -186,7 +186,7 @@ Remote config
 --------------------
 [secret]
 type = crypt
-remote = Cloud-A:mycontainer
+remote = Cloud-A:MYCONTAINER
 filename_encryption = standard
 password = *** ENCRYPTED ***
 password2 = 
@@ -206,4 +206,4 @@ To sync data to your new encrypted remote, use the following:
 $ rclone copy test secret:test/
 ```
 
-That will encrypt and copy a file / folder named `test` from your local machine to `mycontainer:test/` on Bulk Storage.
+That will encrypt and copy a file / folder named `test` from your local machine to `MYCONTAINER:test/` on Bulk Storage.
