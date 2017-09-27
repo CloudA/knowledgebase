@@ -27,3 +27,5 @@ node_modules
 *.pdf
 lextab.py
 yacctab.py
+
+package-lock.json
