@@ -100,7 +100,7 @@ Note: You can get your full Swift API URL from the API Access section of the Das
 >>> read_key ='read-TEST-dff8555a-8c4d-4541-a629-3b6e7029803a'
 >>> response = swiftclient.get_object(
     'https://swift.ca-ns-1.clouda.ca:8443/v2.0/AUTH_(tenant_id)', 
-    None, 
+    '',
     'test', 
     'index.html', 
     headers={
@@ -131,7 +131,7 @@ python-swiftclient library.
     headers={'X-Container-Meta-Full-Key': full_key})
 >>> response = swiftclient.get_object(
     'https://swift.ca-ns-1.clouda.ca:8443/v2.0/AUTH_(tenant_id)', 
-    None,
+    '',
     'test', 
     'another_file.txt', 
     headers={
