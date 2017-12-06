@@ -1,6 +1,6 @@
 /*
 Title: Swift CLI | Empty Container
-Sort: 1
+Sort: 2
 */
 
 The Dashboard Bulk Storage functionality suffices for getting started with with
@@ -21,20 +21,20 @@ used in this example), if you don't run Linux locally -- you can simply create
 a 512MB Server on Cloud-A, and if you destroy it when complete, it will likely
 cost a few pennies.
 
-You'll need to have the following additional dependencies installed on your 
+You'll need to have the following additional dependencies installed on your
 system in order to use the script.
 
     - curl
     - python-keystoneclient
     - python-swiftclient
 
-(note requirement names align with Ubuntu, other OS package managers will 
+(note requirement names align with Ubuntu, other OS package managers will
 have similar names but may not be exact)
 
-Next, visit this page in the dashboard: 
+Next, visit this page in the dashboard:
 
 ```asciidoc
-https://dash.clouda.ca/project/api_access/ 
+https://dash.clouda.ca/project/api_access/
 ```
 
 Then download your CLI Authentication File, and take note of your *Tenant ID*
@@ -91,7 +91,7 @@ fi
 
 ## Running the Script
 
-In order to run the script, 
+In order to run the script,
 
 ```asciidoc
 $ chmod +x empty_container.sh
