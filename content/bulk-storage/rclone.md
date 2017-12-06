@@ -1,6 +1,6 @@
 /*
 Title: Application | rclone
-Sort: 9
+Sort: 7
 */
 
 `rclone` is an rsync-like utility which copies data between a Linux host and an object storage provider. This article 
